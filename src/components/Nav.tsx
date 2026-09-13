@@ -37,8 +37,10 @@ export default function Nav() {
       </ul>
 
       <div className="flex gap-4">
-        <button className="btn btn-outline">Sign in </button>
-        <button className="btn btn-secondary">Sign Up</button>
+        <button className=" text-[#334155]">Sign in </button>
+        <button className="btn bg-[#DB2777] text-white border-none rounded-full">
+          Sign Up
+        </button>
       </div>
     </nav>
   );
