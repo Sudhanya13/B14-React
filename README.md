@@ -35,11 +35,54 @@ DevStack is a React-based web application that helps developers explore differen
 
 ### 1. What is JSX, and why is it used in React?
 
-JSX is a syntax that lets us write HTML-like code inside JavaScript or TypeScript. It makes React components easier to read and helps us describe how the UI should look.
+JSX (JavaScript XML) is a syntax which is extension to Javascript that lets us write HTML-like code inside JavaScript or TypeScript. It makes React components easier to read and helps us describe how the UI should look.
+
+Example: A basic React Component returns a single block of JSX.
+
+import React from 'react';
+
+function WelcomeCard() {
+return (
+<div className="card">
+<h1>Welcome to React!</h1>
+<p>This is a simple JSX element.</p>
+</div>
+);
+}
+
+export default WelcomeCard;
 
 ### 2. What is the difference between props and state?
 
-**Props** are data passed from a parent component to a child component. They are read-only.
+**Props** are arguments passed from a parent react component to a child component. They are read-only(meaning a child component should never modify the props it receives.) In React, data flows in one direction, from parent to child. This is called unidirectional data flow, and the data is passed using props.
+
+Example: Here is a complete setup showing how a parent component (App) passes different values to a reusable child component (UserCard).
+
+import React from 'react';
+
+// 1. The Child Component (Receives data via props)
+function UserCard(props) {
+return (
+<div className="user-card">
+<h2>Name: {props.name}</h2>
+<p>Role: {props.role}</p>
+</div>
+);
+}
+
+// 2. The Parent Component (Passes data to the child)
+function App() {
+return (
+<div>
+<h1>Company Directory</h1>
+{/_ Passing different data to the same component _/}
+<UserCard name="Alice Johnson" role="Software Engineer" />
+<UserCard name="Bob Smith" role="UI/UX Designer" />
+</div>
+);
+}
+
+export default App;
 
 **State** is data managed inside a component. When state changes, React updates the UI.
 
@@ -57,7 +100,11 @@ I used it to **load the technology JSON data** when the application starts.
 
 ### 5. Why does every item in a `.map()` list need a unique `key` prop?
 
-A unique `key` helps React identify each item in a list. This allows React to efficiently update only the items that have changed.
+A unique `key` helps React identify each item in a list.
+It helps React identify which items have changed, been added, or been removed.
+When the data in a list changes, React needs to update the user interface efficiently without destroying and rebuilding the entire DOM tree from scratch. The key acts as a permanent badge or identifier for each element.
+
+If we map over an array in React and completely omit the key prop, it will not crash our application with a fatal runtime error, but it will print a prominent warning in your browser's developer console saying "Each child in a list should have a unique "key" prop."
 
 For example:
 
@@ -82,6 +129,8 @@ In this project, I used it to show an empty-stack message when no technology has
   // Show selected technologies
 )}
 ```
+
+If selectedTech.length is 0, React displays "Your stack is empty." Otherwise, it displays the selected technologies.
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
