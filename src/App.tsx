@@ -155,11 +155,14 @@ function App() {
 
       <main className="max-w-7xl mx-auto px-4">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-[#334155]">
-            Explore Technologies
+          <h1 className="text-3xl font-bold text-[#334155]">
+            Explore
+            <span className="font-bold text-3xl bg-gradient-to-r from-pink-500 from-0% to-[#8B5CF6] to-8% bg-clip-text text-transparent">
+              Technologies
+            </span>
           </h1>
 
-          <p className="mt-2 text-[#475569]">
+          <p className="mt-3 text-[#475569]">
             Pick one technology per category to build your stack
           </p>
         </div>
