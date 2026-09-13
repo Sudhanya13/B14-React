@@ -25,7 +25,12 @@ export default function Card({ technology, selectedTech, onAdd }: CardProps) {
         </div>
 
         <div>
-          <span className="badge badge-secondary">{technology.badge}</span>
+          <span
+            className="  badge  badge-secondary"
+            style={{ backgroundColor: technology.badgeColor }}
+          >
+            {technology.badge}
+          </span>
         </div>
       </div>
 
@@ -42,19 +47,6 @@ export default function Card({ technology, selectedTech, onAdd }: CardProps) {
           <span className="text-sm">{technology.difficulty}</span>
           <div>⭐ {technology.rating}</div>
         </div>
-
-        {/* Add Button */}
-        {/* <div className="card-actions mt-4">
-          <button
-            className={`btn w-full ${
-              isAdded ? "btn-disabled" : "text-white border-none bg-black"
-            }`}
-            disabled={isAdded}
-            onClick={() => onAdd(technology)}
-          >
-            {isAdded ? "✓ Added to Stack" : "Add to Stack"}
-          </button>
-        </div> */}
 
         <div className="card-actions mt-4">
           <button

@@ -13,7 +13,7 @@ export default function YourStack({
   onRemoveAll,
 }: YourStackProps) {
   return (
-    <aside className="bg-base-100 border rounded-xl shadow p-5 h-fit">
+    <aside className="bg-base-100 border border-gray-200 rounded-xl shadow p-5 h-fit">
       {/* Heading */}
       <div className="flex justify-between items-center mb-5">
         <div>
@@ -35,7 +35,7 @@ export default function YourStack({
       {selectedTech.length === 0 ? (
         <div>
           <p>No tech is selected yet</p>
-          <button className="btn btn-dash px-8 py-4">
+          <button className="btn btn-dash px-8 py-10">
             Your Stack is empty
           </button>
         </div>
