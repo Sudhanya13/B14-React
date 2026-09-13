@@ -39,6 +39,7 @@ JSX (JavaScript XML) is a syntax which is extension to Javascript that lets us w
 
 Example: A basic React Component returns a single block of JSX.
 
+<!-- ```tsx
 import React from 'react';
 
 function WelcomeCard() {
@@ -50,6 +51,7 @@ return (
 </div>
 );
 }
+``` -->
 
 export default WelcomeCard;
 
@@ -65,15 +67,19 @@ import React from 'react';
 function UserCard(props) {
 return (
 
-<!-- <div className="user-card">
-<h2>Name: {props.name}</h2>
-<p>Role: {props.role}</p>
-</div> -->
+```tsx
+// <!-- <div className="user-card">
+// <h2>Name: {props.name}</h2>
+// <p>Role: {props.role}</p>
+// </div> -->
 
-);
-}
+// );
+// }
+```
 
 // 2. The Parent Component (Passes data to the child)
+
+<!-- ```tsx
 function App() {
 return (
 
@@ -86,6 +92,8 @@ return (
 
 );
 }
+
+`````-->
 
 export default App;
 
@@ -133,7 +141,7 @@ In this project, I used it to show an empty-stack message when no technology has
 // ) : (
 //   // Show selected technologies
 // )}
-````
+`````
 
 If selectedTech.length is 0, React displays "Your stack is empty." Otherwise, it displays the selected technologies.
 
