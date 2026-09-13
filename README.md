@@ -43,6 +43,7 @@ import React from 'react';
 
 function WelcomeCard() {
 return (
+
 <div className="card">
 <h1>Welcome to React!</h1>
 <p>This is a simple JSX element.</p>
@@ -63,22 +64,26 @@ import React from 'react';
 // 1. The Child Component (Receives data via props)
 function UserCard(props) {
 return (
-<div className="user-card">
+
+<!-- <div className="user-card">
 <h2>Name: {props.name}</h2>
 <p>Role: {props.role}</p>
-</div>
+</div> -->
+
 );
 }
 
 // 2. The Parent Component (Passes data to the child)
 function App() {
 return (
-<div>
+
+<!-- <div>
 <h1>Company Directory</h1>
 {/_ Passing different data to the same component _/}
 <UserCard name="Alice Johnson" role="Software Engineer" />
 <UserCard name="Bob Smith" role="UI/UX Designer" />
-</div>
+</div> -->
+
 );
 }
 
@@ -108,13 +113,13 @@ If we map over an array in React and completely omit the key prop, it will not c
 
 For example:
 
-```tsx
-{
-  cardData.map((technology) => (
-    <Card key={technology.id} technology={technology} />
-  ));
-}
-```
+````tsx
+// {
+//   cardData.map((technology) => (
+//     <Card key={technology.id} technology={technology} />
+//   ));
+// }
+// ```
 
 ### 6. What is conditional rendering? Show one place you used it.
 
@@ -122,13 +127,13 @@ Conditional rendering means showing different UI depending on a condition.
 
 In this project, I used it to show an empty-stack message when no technology has been selected:
 
-```tsx
-{selectedTech.length === 0 ? (
-  <p>Your stack is empty.</p>
-) : (
-  // Show selected technologies
-)}
-```
+// ```tsx
+// {selectedTech.length === 0 ? (
+//   <p>Your stack is empty.</p>
+// ) : (
+//   // Show selected technologies
+// )}
+````
 
 If selectedTech.length is 0, React displays "Your stack is empty." Otherwise, it displays the selected technologies.
 
@@ -137,7 +142,7 @@ If selectedTech.length is 0, React displays "Your stack is empty." Otherwise, it
 A parent sends data to a child using **props**.
 
 ```tsx
-<Card technology={technology} />
+//  <Card technology={technology} />
 ```
 
 A child can send something back by calling a **function passed by the parent as a prop**.
@@ -145,13 +150,13 @@ A child can send something back by calling a **function passed by the parent as 
 For example:
 
 ```tsx
-<Card onAdd={handleAdd} />
+//   <Card onAdd={handleAdd} />
 ```
 
 The child can then call:
 
 ```tsx
-onAdd(technology);
+// onAdd(technology);
 ```
 
 This lets the parent update its state.
