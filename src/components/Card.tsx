@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import type { Technology } from "../types/Cardtype";
 
 type CardProps = {
@@ -42,17 +43,36 @@ export default function Card({ technology, selectedTech, onAdd }: CardProps) {
           <div>⭐ {technology.rating}</div>
         </div>
 
-        {/* Rating */}
-        {/* <div className="mt-2">⭐ {technology.rating}</div> */}
-
         {/* Add Button */}
-        <div className="card-actions mt-4">
+        {/* <div className="card-actions mt-4">
           <button
             className={`btn w-full ${
               isAdded ? "btn-disabled" : "text-white border-none bg-black"
             }`}
             disabled={isAdded}
             onClick={() => onAdd(technology)}
+          >
+            {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+          </button>
+        </div> */}
+
+        <div className="card-actions mt-4">
+          <button
+            className={`btn w-full ${
+              isAdded
+                ? "bg-gray-200 text-gray-500 border-gray-200"
+                : "text-white border-none bg-black"
+            }`}
+            onClick={() => {
+              if (isAdded) {
+                toast.warning(
+                  `${technology.name} is already added to your stack!`,
+                );
+                return;
+              }
+
+              onAdd(technology);
+            }}
           >
             {isAdded ? "✓ Added to Stack" : "Add to Stack"}
           </button>
