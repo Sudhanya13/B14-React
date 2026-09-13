@@ -18,11 +18,6 @@ export default function YourStack({
       <div className="flex justify-between items-center mb-5">
         <div>
           <h2 className="text-xl font-bold">Your Stack</h2>
-
-          <p className="text-sm text-gray-500">
-            {selectedTech.length} Technology
-            {selectedTech.length !== 1 ? "s" : ""} Selected
-          </p>
         </div>
 
         {/* Remove All */}
@@ -38,10 +33,11 @@ export default function YourStack({
 
       {/* Empty state */}
       {selectedTech.length === 0 ? (
-        <div className="text-center py-10 text-gray-500">
-          <p className="text-lg">Your stack is empty</p>
-
-          <p className="text-sm mt-2">Add technologies to build your stack.</p>
+        <div>
+          <p>No tech is selected yet</p>
+          <button className="btn btn-dash px-8 py-4">
+            Your Stack is empty
+          </button>
         </div>
       ) : (
         /* Selected items */

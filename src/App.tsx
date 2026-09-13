@@ -154,6 +154,16 @@ function App() {
       <Banner />
 
       <main className="max-w-7xl mx-auto px-4">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-[#334155]">
+            Explore Technologies
+          </h1>
+
+          <p className="mt-2 text-[#475569]">
+            Pick one technology per category to build your stack
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Technology Section */}
           <section className="lg:col-span-3">
